@@ -54,7 +54,14 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches.
 
-      # TBD-course-set-up
+      - name: Create a commit with a .env file
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          echo "SOME_SECURE_TOKEN=abc123" >> .env
+          git add .env
+          git commit -m "Add .env file"
+          git push
 
       # In README.md, switch step 0 for step 1.
       - name: Update to step 1
