@@ -9,6 +9,9 @@ on:
   workflow_dispatch:
   # Add events that trigger this workflow.
   # TBD-step-1-event:
+  push:
+    paths:
+      - .env
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -54,6 +57,15 @@ jobs:
           fetch-depth: 0 # Let's get all the branches.
 
       # TBD-step-1-additional-steps
+      - name: Ensure .env is gone
+        run: |
+          if [ -f .env ]; then
+            echo "The .env file still exists in the root directory, please remove it."
+            exit 1
+          else
+            echo "Great! The .env is no longer in the root directory."
+            exit 0
+          fi
 
       # In README.md, switch step 1 for step 2.
       - name: Update to step 2
