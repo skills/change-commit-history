@@ -10,8 +10,6 @@ on:
   # Add events that trigger this workflow.
   # TBD-step-2-event:
   push:
-    paths:
-      - .env
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
