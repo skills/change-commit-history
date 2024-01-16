@@ -57,7 +57,7 @@ jobs:
           fetch-depth: 0 # Let's get all the branches.
 
       # TBD-step-1-additional-steps
-      - name: Ensure .env is gone
+      - name: Ensure .env is gone from the root directory
         run: |
           if [ -f .env ]; then
             echo "The .env file still exists in the root directory, please remove it."
