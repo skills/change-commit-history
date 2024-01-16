@@ -9,6 +9,9 @@ on:
   workflow_dispatch:
   # Add events that trigger this workflow.
   # TBD-step-2-event:
+  push:
+    paths:
+      - .env
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -54,6 +57,15 @@ jobs:
           fetch-depth: 0 # Let's get all the branches.
 
       # TBD-step-2-additional-steps
+      - name: Ensure .env is gone from history
+        run: |
+          if [ -n "$(git log --stat --all -- .env)" ]; then
+            echo "File .env is still in the repository's history, please remove it."
+            exit 1
+          else
+            echo "File .env doesn't exist in the repository's history."
+            exit 0
+          fi
 
       # In README.md, switch step 2 for step 3.
       - name: Update to step 3
