@@ -9,34 +9,55 @@
   Add your open source license, GitHub uses the MIT license.
 -->
 
-# TBD-course-name
+# Remove commit history
 
-_TBD-course-description_
+Accidental commits can be tricky to remove with Git. In this GitHub Skills course, you'll use BFG Repo-Cleaner to to change the history of a Git repository. You can apply what you learn in this course to fully remove sensitive material from your own repository.
 
 </header>
 
 <!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
-  TBD-step-1-notes.
+  <<< Author notes: Course start >>>
+  Include start button, a note about Actions minutes,
+  and tell the learner why they should take the course.
 -->
 
-## Step 1: TBD-step-1-name
+## Welcome
 
-_Welcome to "TBD-course-name"! :wave:_
+A trustworthy commit history is the backbone of version control with Git. As a result, altering commit history is difficult by design. Sometimes, the history needs to be altered to remove credentials or other sensitive data that is mistakenly checked in. In this course, we'll learn how to remove content from repository's complete history and apply best practices for preventing accidental commits in the future.
 
-TBD-step-1-information
+- **Who is this for**: Intermediate users of Git, organizations
+- **What you'll learn**: How to remove a file from Git's entire history
+- **What you'll build**: You'll manipulate the history of a Git repository
+- **Prerequisites**: We recommend you clone this repository to your machine and use the command line to follow along. You'll also need to install BFG Repo-Cleaner, but the steps will be covered in the course.
+- **How long**: This course takes less than 1 hour to complete.
 
-**What is _TBD-term-1_**: TBD-definition-1
+In this course, you will:
 
-### :keyboard: Activity: TBD-step-1-name
+1. Remove content from the root directory of a repository
+2. Use BFG Repo-Cleaner to remove content from repository history
+3. Avoid future accidental commits by adding a pattern to `.gitignore`
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. TBD-step-1-instructions.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+### How to start this course
+
+<!-- For start course, run in JavaScript:
+'https://github.com/new?' + new URLSearchParams({
+  template_owner: 'skills',
+  template_name: 'change-commit-history',
+  owner: '@me',
+  name: 'skills-change-commit-history',
+  description: 'My copy of the skills course on changing commit history',
+  visibility: 'public',
+}).toString()
+-->
+
+[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=change-commit-history&owner=%40me&name=skills-change-commit-history&description=My+copy+of+the+skills+course+on+changing+commit+history&visibility=public)
+
+1. Right-click **Start course** and open the link in a new tab.
+2. In the new tab, most of the prompts will automatically fill in for you.
+   - For owner, choose your personal account or an organization to host the repository.
+   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+   - Scroll down and click the **Create repository** button at the bottom of the form.
+3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
 <footer>
 
