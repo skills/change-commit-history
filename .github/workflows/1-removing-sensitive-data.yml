@@ -1,17 +1,17 @@
-name: Step 3, TBD-step-3-name
+name: Step 1, Removing sensitive data
 
-# This step triggers after TBD-step-3-event-desc.
-# This workflow updates from step 3 to step 4.
+# This step triggers after TBD-step-1-event-desc.
+# This workflow updates from step 1 to step 2.
 
-# This will run every time we TBD-step-3-event-desc.
+# This will run every time we TBD-step-1-event-desc.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   # Add events that trigger this workflow.
-  # TBD-step-3-event:
+  # TBD-step-1-event:
   push:
     paths:
-      - .gitignore
+      - .env
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -33,18 +33,18 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_TBD-step-3-event:
-    name: On TBD-step-3-event
+  on_TBD-step-1-event:
+    name: On TBD-step-1-event
     needs: get_current_step
 
     # We will only run this action when:
     # 1. This repository isn't the template repository.
-    # 2. The step is currently 3.
+    # 2. The step is currently 1.
     # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 3 }}
+          && needs.get_current_step.outputs.current_step == 1 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows.
     runs-on: ubuntu-latest
@@ -56,22 +56,22 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches.
 
-      # TBD-step-3-additional-steps
-      - name: Check if .gitignore contains .env
+      # Logic for step 1
+      - name: Ensure .env is gone from the root directory
         run: |
-          if grep -qw ".env" .gitignore; then
-            echo ".env is in .gitignore"
-            exit 0
-          else
-            echo ".env is not in .gitignore"
+          if [ -f .env ]; then
+            echo "The .env file still exists in the root directory, please remove it."
             exit 1
+          else
+            echo "Great! The .env is no longer in the root directory."
+            exit 0
           fi
 
-      # In README.md, switch step 3 for step 4.
-      - name: Update to step 4
+      # In README.md, switch step 1 for step 2.
+      - name: Update to step 2
         uses: skills/action-update-step@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 3
-          to_step: X
+          from_step: 1
+          to_step: 2
           branch_name: tbd-branch-name
