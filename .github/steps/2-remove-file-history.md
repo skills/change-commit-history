@@ -19,22 +19,30 @@ There are multiple tools available for removing Git history, we'll use BFG Repo-
 
 ### :keyboard: Activity: Use BFG Repo-Cleaner to remove the `.env` file
 
-1. Install BFG Repo-Cleaner on your machine. You can follow the [instructions on the web site](https://rtyley.github.io/bfg-repo-cleaner/) to do so or you can use a package manager for your operating system.
-2. Confirm the `.env` file is removed from the root directory. THe command should return empty.
+1. Update the local copy of your repository to ensure you have the most recent version of the course files.
+   ```shell
+   git pull
+   ```
+2. Install BFG Repo-Cleaner on your machine. You can follow the [instructions on the web site](https://rtyley.github.io/bfg-repo-cleaner/) to do so or you can use a package manager for your operating system.
+3. Confirm the `.env` file is removed from the root directory. The command should return empty.
    ```shell
    find . -name ".env"
    ```
-3. Search for .env in the repository's history. The command should return at least 2 commits: the addition of `.env` when you copied this template repository, and the removal of `.env`.
+4. Search for .env in the repository's history. The command should return at least 2 commits: the addition of `.env` when you copied this template repository, and the removal of `.env`.
    ```shell
    git log --stat --all -- .env
    ```
-4. Use BFG Repo-Cleaner to delete all references to `.env` that exist in the repository.
+5. Use BFG Repo-Cleaner to delete all references to `.env` that exist in the repository.
    ```shell
    bfg --delete-files .env
    ```
-5. The tool will run and make some suggestions about some follow-up commands. Run those to get your local repository cleaned up.
-6. Push your changes to GitHub. Note we're using the `--force` argument in this step since we're altering Git history.
+6. The tool will run and make some suggestions about some follow-up commands. Run those to get your local repository cleaned up.
+7. Repeat the sarch for .env in the repository's history. This time, the command should return empty.
+   ```shell
+   git log --stat --all -- .env
+   ```
+8. Push your changes to GitHub. Note we're using the `--force` argument in this step since we're altering Git history.
    ```shell
    git push --force
    ```
-7. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+9. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.

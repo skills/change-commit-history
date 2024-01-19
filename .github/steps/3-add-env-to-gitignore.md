@@ -19,15 +19,19 @@ We'll now configure Git so it ignores a future addition of sensitive content by 
 
 ### :keyboard: Activity: Add `.env` to `.gitignore`
 
-1. Locate the file we added to the repository titled `.gitignore`.
-2. Add `.env` to the file.
-3. Stage, commit the file:
+1. Update the local copy of your repository to ensure you have the most recent version of the course files.
+   ```shell
+   git pull
+   ```
+2. Locate the file we added to the repository titled `.gitignore`.
+3. Add `.env` to the file.
+4. Stage, commit the file:
    ```shell
    git add .gitignore
    git commit -m "ignore .env files"
    ```
-4. Push the file to GitHub.com
+5. Push the file to GitHub.com
    ```shell
    git push
    ```
-5. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+6. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
