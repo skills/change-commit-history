@@ -2,7 +2,6 @@
   <<< Author notes: Step 3 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-3-notes.
 -->
 
 ## Step 3: Avoiding future commits with `.env`

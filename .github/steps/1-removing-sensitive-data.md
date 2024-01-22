@@ -4,7 +4,6 @@
   The first step is always the hardest, so pick something easy!
   Link to docs.github.com for further explanations.
   Encourage users to open new tabs for steps!
-  TBD-step-1-notes.
 -->
 
 ## Step 1: Removing sensitive data

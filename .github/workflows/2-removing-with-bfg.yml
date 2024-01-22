@@ -1,14 +1,12 @@
 name: Step 2, Removing a file with BFG Repo-Cleaner
 
-# This step triggers after TBD-step-2-event-desc.
 # This workflow updates from step 2 to step 3.
 
-# This will run every time we TBD-step-2-event-desc.
+# This will run every time we push to the repository.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   # Add events that trigger this workflow.
-  # TBD-step-2-event:
   push:
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
@@ -31,8 +29,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_TBD-step-2-event:
-    name: On TBD-step-2-event
+  on_push:
+    name: On push
     needs: get_current_step
 
     # We will only run this action when:
@@ -54,7 +52,7 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches.
 
-      # TBD-step-2-additional-steps
+      # Logic for step 2
       - name: Ensure .env is gone from history
         run: |
           if [ -n "$(git log --stat --all -- .env)" ]; then
@@ -72,4 +70,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 2
           to_step: 3
-          branch_name: tbd-branch-name

@@ -1,14 +1,12 @@
 name: Step 3, Avoiding future commits with .env
 
-# This step triggers after TBD-step-3-event-desc.
 # This workflow updates from step 3 to step 4.
 
-# This will run every time we TBD-step-3-event-desc.
+# This will run every time we push `.gitignore`.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   # Add events that trigger this workflow.
-  # TBD-step-3-event:
   push:
     paths:
       - .gitignore
@@ -33,8 +31,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_TBD-step-3-event:
-    name: On TBD-step-3-event
+  on_push-gitignore:
+    name: On push of .gitignore
     needs: get_current_step
 
     # We will only run this action when:
@@ -56,7 +54,7 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches.
 
-      # TBD-step-3-additional-steps
+      # Logic for step 3
       - name: Check if .gitignore contains .env
         run: |
           if grep -qw ".env" .gitignore; then
@@ -74,4 +72,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 3
           to_step: X
-          branch_name: tbd-branch-name

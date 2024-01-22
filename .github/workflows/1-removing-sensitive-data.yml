@@ -1,14 +1,12 @@
 name: Step 1, Removing sensitive data
 
-# This step triggers after TBD-step-1-event-desc.
 # This workflow updates from step 1 to step 2.
 
-# This will run every time we TBD-step-1-event-desc.
+# This will run every time we push a `.env` file.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   # Add events that trigger this workflow.
-  # TBD-step-1-event:
   push:
     paths:
       - .env
@@ -33,8 +31,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_TBD-step-1-event:
-    name: On TBD-step-1-event
+  on_push-dotenv-file:
+    name: On push of .env file
     needs: get_current_step
 
     # We will only run this action when:
@@ -74,4 +72,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 1
           to_step: 2
-          branch_name: tbd-branch-name

@@ -2,7 +2,6 @@
   <<< Author notes: Step 2 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-2-notes.
 -->
 
 ## Step 2: Removing a file from Git history using BFG Repo-Cleaner
