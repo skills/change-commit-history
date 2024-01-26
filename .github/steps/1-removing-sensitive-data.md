@@ -20,9 +20,10 @@ See [Deleting a file on GitHub Docs](https://docs.github.com/en/repositories/wor
 
 ### :keyboard: Activity: Remove `.env` in the project root directory
 
-1. Open your terminal of choice and clone this repository.
+1. Open your terminal of choice, clone this repository, and switch to your repository directory.
    ```shell
    git clone <your-repository-url>
+   cd <your-repository-name>
    ```
 2. Delete `.env` from the root directory.
    ```shell

@@ -12,7 +12,7 @@ The steps we've taken so far ensure that any _new_ clones of the repository don'
 
 Now that we've mitigated the risk of exposing sensitive content, we'll be proactive and prevent its addition.
 
-We'll now configure Git so it ignores a future addition of sensitive content by adding the filename to `.gitignore`. If someone should add it to the local copy of their repository, it will remain only on the contributor's machine and won't be pushed to GitHub.
+We'll now configure Git so it ignores a future addition of sensitive content by adding `.env` to `.gitignore`. If someone should that file to the local copy of their repository, it will remain only on the contributor's machine and won't be pushed to GitHub.
 
 **What is `.gitignore`?** This special file allows us to tell Git naming patterns to ignore. You can read more about it in [Ignoring files on GitHub Docs](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
 

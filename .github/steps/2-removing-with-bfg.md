@@ -10,11 +10,11 @@ _You removed `.env` from the repository's root directory! :tada:_
 
 Now that we've deleted the file, people that browse the repository on GitHub.com or anyone looking at just the head commit won't see the file. However, due to Git's nature, the file is still present in the history. In this step, we'll work on removing the file from the repository history.
 
-**What is a _head commit_**?: In Git, HEAD points to a branch or a commit. When we say [head commit](https://docs.github.com/en/get-started/quickstart/github-glossary#head), we usually mean the most recent commit in the repository's history.
+**What is a _head commit_**? In Git, HEAD points to a branch or a commit. When we say [head commit](https://docs.github.com/en/get-started/quickstart/github-glossary#head), we usually mean the most recent commit in the repository's history.
 
 There are multiple tools available for removing Git history, we'll use BFG Repo-Cleaner in this step. You can find additional documentation on [Using the BFG in GitHub Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#using-the-bfg).
 
-**What is _BFG Repo-Cleaner_**?: BFG Repo-Cleaner is software that can help you search through and alter repository history. Git can natively do this using [`git filter-repo`](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#using-git-filter-repo), but it can be more complex.
+**What is _BFG Repo-Cleaner_**? BFG Repo-Cleaner is software that can help you search through and alter repository history. Git can natively do this using [`git filter-repo`](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#using-git-filter-repo), but it can be more complex.
 
 ### :keyboard: Activity: Use BFG Repo-Cleaner to remove the `.env` file
 
@@ -36,7 +36,7 @@ There are multiple tools available for removing Git history, we'll use BFG Repo-
    bfg --delete-files .env
    ```
 6. The tool will run and make some suggestions about some follow-up commands. Run those to get your local repository cleaned up.
-7. Repeat the sarch for .env in the repository's history. This time, the command should return empty.
+7. Repeat the search for `.env` in the repository's history. This time, the command should return empty.
    ```shell
    git log --stat --all -- .env
    ```
